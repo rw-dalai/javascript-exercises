@@ -21,17 +21,21 @@ const mergedObj = { ...obj1, ...obj2 };
 
 // function(...args)
 // args is an array of all arguments passed to the function
+// ...args must be the last parameter in the function definition
 
 // 1. Greets multiple names
-function greet(...names) {
-    return `Hello, ${names.join(" and ")}!`;
+function greet(greeting, ...names) {
+    return `${greeting}, ${names.join(" and ")}!`;
 }
-// console.log(greet("Ana", "Rene")); // Hello, Ana and Rene!
+// console.log(greet("Hello", "Ana", "Rene")); // Hello, Ana and Rene!
 
 
 // 2. Sums all numbers
 function sum(...numbers) {
-    return numbers.reduce((total, num) => total + num, 0);
+    let sum = 0;
+    for (let n in numbers) {
+        sum += n;
+    }
 }
 // console.log("Sum:", sum(1, 2, 3, 4)); // 10
 
@@ -46,7 +50,7 @@ const [red, green, blue] = rgb;
 
 
 // 2. Objects
-const person = { name: "Ana", age: 18, class: "" };
+const person = { name: "Ana", age: 18, clazz: "7ABIF" };
 // const { name, age } = person;
 const { name, ...personWithoutAge } = person;
 console.log("Name:", name);
