@@ -18,7 +18,7 @@ const items = [
 ```
 Aufgabe: Erzeuge **deklarativ** (keine `for`-Schleife) ein neues Array mit
 - nur Artikeln mit `stock > 0`,
-- **+10% Preis** für Kategorie `"hardware"`
+- 10% Preisaufschlag,
 - zusätzlichem Feld `isPremium: price >= 100`. 
 - Das **Original** darf nicht verändert werden.
 
@@ -40,17 +40,20 @@ Gegeben:
 const teamA = ["Mia", "Noah", "Lena"];
 const teamB = ["Ben", "Lea", "Noah"];
 ```
-1) Erzeuge ein **neues** Array **ohne Duplikate** in der **Reihenfolge des ersten Auftretens** (`teamA` vor `teamB`).
+1) Erzeuge ein **neues** Array die beide Teams kombiniert
 2) Füge **ohne Mutation** den String `"Coach"` an **Index 0** ein.
+3) BONUS1: Entferne **Duplikate** (z.B. `"Noah"`). (Tipp: `Set`)
+4) BONUS2: Sortiere das Ergebnis alphabetisch.
 
-### A4 – Statistik mit `reduce` (BONUS/Optional für 1++ auf Test)
+### A4 Any, Every
+
 Gegeben:
 
 ```js
-const scores = [12, 5, 18, 3, 27];
+const scores = [85, 92, 78, 90, 88];
 ```
-- Erzeuge per **`reduce`** ein **Objekt** `{ min, max, average }`
-- Das Eingangsarray bleibt unverändert.
+1) Prüfe, ob **alle** Scores `>= 80` sind
+2) Prüfe, ob **mindestens ein** Score `>= 95` ist
 
 ---
 
@@ -68,6 +71,12 @@ const scores = [12, 5, 18, 3, 27];
 - `keysArray` ist ein Array von **Strings**.
 - **Mutiert `obj` nicht**.
 - Beispiele: `pick({a:1,b:2,c:3}, ["a","c"]) // {a:1, c:3}`.
+
+### B3 - addPixel(px1, px2)
+Schreibe eine Funktion `addPixel(px1, px2)`, die zwei Strings im Format `"100px"` addiert und das Ergebnis als String mit `"px"` zurückgibt.
+- Beispiel: `addPixel("100px", "250px") // "350px"`
+- Format: `<number>px`
+- Bei ungültigem Format → `Error` werfen
 
 ---
 
@@ -122,9 +131,23 @@ const coords = [48.2082, 16.3738, 171];
 
 const settings = { theme: "dark", version: "1.0.2", flags: { beta: true } };
 // Hole theme und version als ver, den Rest in otherSettings (Object-Destructuring, Alias + Rest)
-
-function greet({ firstName, lastName = "Doe" }) {
-  console.log(`Hi ${firstName} ${lastName}`);
-}
-// Rufe greet mit einem Objekt auf, das nur firstName liefert
 ```
+
+### D4 – Funktionen mit Spread
+
+```js
+function sumAll(...numbers) {
+  // Implementierung
+}
+console.log(sumAll(1, 2, 3, 4); // 10
+```
+
+### D5 – Funktion mit Destructuring
+
+```js
+function MyComponent(/* ?? ?? ?? */) {
+  console.log(`${title} - ${name}`);
+}
+
+const person = { title: "Developer", name: "Alice"};
+MyComponent(person)
