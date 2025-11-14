@@ -2,7 +2,6 @@
 
 ## A) Arrays
 
-### A1 – Preisberechnung aller Produkte
 Gegeben:
 ```js
 const items  = [
@@ -12,11 +11,8 @@ const items  = [
   {id : 1, name : "MDMA", preis : 50, description: "Rainbow", isLegal : false}
 ];
 ```
-**Aufgabe:** Schreibe eine Funktion, die alle `preis` Werte aufsummiert und das Gesamtergebnis zurückgibt.
 
----
-
-### A2 – Neues Array mit Preisfilter (10€ bis < 20€)
+### A1 – Neues Array mit Preisfilter (10€ bis < 20€)
 Erzeuge zwei Versionen:
 1. **Imperativ** (mit `for` oder `for...of`)
 2. **Deklarativ** (mit `.filter()`)
@@ -27,11 +23,27 @@ Gefiltert werden sollen nur Produkte mit:
 
 ---
 
-### A3 – Preise verdoppeln (weniger als 10€)
+### A2 – Preise verdoppeln (weniger als 10€)
 Erstelle erneut zwei Versionen:
 1. **Imperativ:** Neues Array mit verdoppeltem `preis` für Produkte unter 10€
 2. **Deklarativ:** `.filter()` + `.map()` verwenden
 
+
+### A3 – Gesamtsumme der Preise
+
+**Aufgabe:** Schreibe eine Funktion, die alle `preis` Werte aufsummiert und das Gesamtergebnis zurückgibt.
+```js
+function berechneGesamtpreis(...items) {
+    // TODO: Implementiere die Funktion
+}
+
+// Beispielaufruf:
+const item1 = { preis: 10 };
+const item2 = { preis: 20 };
+const item3 = { preis: 30 };
+
+const gesamtpreis = berechneGesamtpreis(item1, item2, item3);
+```
 ---
 
 ## B) Spread · Rest · Destructuring
